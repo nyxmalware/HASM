@@ -1,0 +1,33 @@
+.data
+    counter dd 0
+    buffer times 256 db 0
+
+.code
+global _start
+
+_start:
+    .IF eax > 100
+        call process_high
+    .ELSE
+        call process_low
+    .ENDIF
+
+    macro inc_counter {
+        mov eax, [counter]
+        add eax, 1
+        mov [counter], eax
+    }
+
+    inc_counter
+
+    mov eax, 60
+    xor edi, edi
+    syscall
+
+process_high:
+    mov eax, 1
+    ret
+
+process_low:
+    mov eax, 0
+    ret
