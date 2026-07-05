@@ -1,1 +1,2 @@
-*.hsm linguist-language=ASM
+*.hsm linguist-language=HASH
+*.hash linguist-language=HASH
