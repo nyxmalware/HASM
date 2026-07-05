@@ -1,0 +1,17 @@
+.data
+    msg db 'Hello from HASM!', 0xA, 0
+    len equ $ - msg
+
+.code
+global _start
+
+_start:
+    mov.w ax, 1
+    mov edi, 1
+    mov esi, msg
+    mov edx, len
+    syscall
+
+    mov eax, 60
+    xor edi, edi
+    syscall
