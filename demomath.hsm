@@ -1,0 +1,20 @@
+.data
+    radius equ 10
+    area equ Pi * radius^2
+    sine_table:
+
+.code
+global _start
+
+_start:
+    mov eax, area
+    mov ebx, (5 * 6 + 3) / 3
+    mov ecx, Sin(45 * Pi / 180) * 1000
+
+    mov edx, eax
+    add edx, ebx
+    sub edx, ecx
+
+    mov eax, 60
+    xor edi, edi
+    syscall
