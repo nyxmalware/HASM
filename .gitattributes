@@ -1,2 +1,2 @@
-*.hsm linguist-language=Assembler
-*.has linguist-language=Assembler
+*.hsm linguist-language=Assembly
+*.has linguist-language=Assembly
